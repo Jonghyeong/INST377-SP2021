@@ -8,9 +8,9 @@
     position: relative;
     width: 398px;
     padding: 10px 40px;
-    border: 1px solid #CCC;
+    border: 1px solid rgb(203, 203, 203);
     border-radius: 15px;
-    background: #eee;
+    background: rgb(81, 245, 147);
   }
   
   .carousel img {
@@ -19,16 +19,31 @@
     display: block;
   }
   
-  .arrow {
+  .arrow_prev {
     position: absolute;
+    left: 0;
     top: 60px;
     padding: 0;
     background: #ddd;
     border-radius: 15px;
-    border: 1px solid gray;
-    font-size: 24px;
+    border: 1px solid rgb(218, 216, 216);
+    font-size: 40px;
     line-height: 24px;
-    color: #444;
+    color: rgb(101, 100, 104);
+    display: block;
+  }
+
+  .arrow_next {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    padding: 0;
+    background: #ddd;
+    border-radius: 15px;
+    border: 1px solid rgb(218, 216, 216);
+    font-size: 40px;
+    line-height: 24px;
+    color: rgb(101, 100, 104);
     display: block;
   }
   
@@ -39,6 +54,14 @@
   .arrow:hover {
     background: #ccc;
     cursor: pointer;
+  }
+  
+  .listimages {
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: -webkit-transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
   }
   
   .prev {
@@ -52,6 +75,7 @@
   .gallery {
     width: 390px;
     overflow: hidden;
+    margin: 0 auto;
   }
   
   .gallery ul {
