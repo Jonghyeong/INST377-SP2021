@@ -1,7 +1,7 @@
 const lis = document.getElementsByTagName('li');
 let array = Array.prototype.slice.call(lis);
 let position = 0;
-let count = 3;
+const count = 3;
 
 function next() { 
 console.log(array.length);
