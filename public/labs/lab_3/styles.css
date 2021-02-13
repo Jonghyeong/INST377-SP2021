@@ -6,6 +6,7 @@
   
   .carousel {
     position: relative;
+    margin: 0 auto;
     width: 398px;
     padding: 10px 40px;
     border: 1px solid rgb(203, 203, 203);
@@ -56,14 +57,6 @@
     cursor: pointer;
   }
   
-  .listimages {
-    -webkit-transition: -webkit-transform 1s ease-out;
-    transition: -webkit-transform 1s ease-out;
-    -o-transition: transform 1s ease-out;
-    transition: transform 1s ease-out;
-    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
-  }
-  
   .prev {
     left: 7px;
   }
@@ -91,3 +84,7 @@
   .gallery li {
     display: inline-block;
   }
+
+  /* .gallery li.hidden {
+    display: none;  
+  } */

@@ -9,27 +9,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonghyeong Kim Lab 3 </title>
+    <title>Events Demo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div id="carousel" class="carousel">
-      <button class="arrow_prev">⇦</button>
-      <div class="gallery">
-        <ul class="listimages">
-          <li><img src="images/onigiri_1.png" alt=""></li>
-          <li><img src="images/onigiri_2.png" alt=""></li>
-          <li><img src="images/onigiri_3.png" alt=""></li>
-          <li><img src="images/onigiri_4.png" alt=""></li>
-          <li><img src="images/roll_1.png" alt=""></li>
-          <li><img src="images/roll_2.png" alt=""></li>
-          <li><img src="images/roll_3.png" alt=""></li>
-        </ul>
-      </div>
-      <button class="arrow_next">⇨</button>
+  <div id="carousel" class="carousel">
+    <button class="arrow_prev" onclick="prev()">⇦</button>
+    <div class="gallery">
+      <ul class="listimages">
+        <li><img src="images/onigiri_1.png" alt=""></li>
+        <li><img src="images/onigiri_2.png" alt=""></li>
+        <li><img src="images/onigiri_3.png" alt=""></li>
+        <li><img src="images/onigiri_4.png" alt=""></li>
+        <li><img src="images/roll_1.png" alt=""></li>
+        <li><img src="images/roll_2.png" alt=""></li>
+        <li><img src="images/roll_3.png" alt=""></li>
+      </ul>
     </div>
-<script scr="script.js"></script>    
+    <button class="arrow_next" onclick="next()">⇨</button>
+  </div>
 </body>
-
+<script src="script1.js"></script>
 </html>

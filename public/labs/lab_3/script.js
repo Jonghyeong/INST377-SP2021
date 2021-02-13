@@ -54,7 +54,19 @@ let position = 0;
 let width = 130; // image width
 let count = 3; // visible images count
 
+
+document.querySelector('.arrow_prev').onclick =  (event) => {
+  console.log("@@@@@@@@@@@@@");
+
+  event.moveCarousel();
+};
+
 function moveCarousel(event) {
+  console.log("@@@@@@@@@@@@@");
+  const array1 = document.getElementsByTagName("li")
+  const target = document.querySelector('#prev');
+
+
   if (event.target.classList.contains("arrow_next")) {
     position = position - width * count;
     event.currentTarget.querySelector(
@@ -71,17 +83,17 @@ function moveCarousel(event) {
   console.log(position);
 }
 
-// Addition
+
 // function riceball() {
 //     const array1 = [];
 //     const images = document.querySelector(".listimages")
 
-function clicktoshift() {
-    let nextBtn = document.querySelector(".arrow_next")
-    let prevBtn = document.querySelector(".arrow_prev")
+// function clicktoshift() {
+//     let nextBtn = document.querySelector(".arrow_next")
+//     let prevBtn = document.querySelector(".arrow_prev")
 
-    nextBtn.addEventListener("click", (event) => {
-        event.moveCarousel
-    )}
-};
-window.onload = clicktoshift;
+//     nextBtn.addEventListener("click", (event) => {
+//         event.moveCarousel
+//     )}
+// };
+// window.onload = clicktoshift;
