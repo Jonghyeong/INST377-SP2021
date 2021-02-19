@@ -14,18 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
     bird.style.bottom = `${birdBottom}px`;
     bird.style.left = `${birdLeft}px`;
   }
-  const gameTimerId = setInterval(startGame, 20);
 
-  function control(e) {
-    if (e.keyCode === 32) {
-        jump();
-    }
-  }
+  const gameTimerId = setInterval(startGame, 20);
 
   function jump() {
     if (birdBottom < 500) birdBottom += 50;
     bird.style.bottom = `${birdBottom}px`;
-    console.log(birdBottom);
+  }
+
+  function control(e) {
+    if (e.keyCode === 32) {
+      jump();
+    }
   }
   document.addEventListener('keyup', control);
 
@@ -46,36 +46,35 @@ document.addEventListener('DOMContentLoaded', () => {
     obstacle.style.bottom = `${obstacleBottom}px`;
     topObstacle.style.bottom = `${obstacleBottom + gap}px`;
 
+    function gameOver() {
+      clearInterval(TimerId);
+      isGameOver = true;
+      document.removeEventListener('keyup', control);
+      ground.classList.add('ground');
+      ground.classList.remove('ground-moving');
+    }
+
     function moveObstacle() {
       obstacleLeft -= 2;
       obstacle.style.left = `${obstacleLeft}px`;
       topObstacle.style.left = `${obstacleLeft}px`;
 
       if (obstacleLeft === -60) {
-        clearInterval(timerId);
+        clearInterval(TimerId);
         gameDisplay.removeChild(obstacle);
         gameDisplay.removeChild(topObstacle);
       }
       if (
-        obstacleLeft > 200 && obstacleLeft > 280 && birdLeft === 220
-                && (birdBottom < obstacleBottom + 153 || birdBottom > obstacleBottom + gap - 200)
-                || birdBottom === 0
+        (obstacleLeft > 200 && obstacleLeft > 280 && birdLeft === 220
+            && birdBottom < obstacleBottom + 153) || birdBottom > obstacleBottom + gap - 200
+            || birdBottom === 0
       ) {
         gameOver();
-        clearInterval(timerId);
+        clearInterval(TimerId);
       }
     }
     let timerId = setInterval(moveObstacle, 20);
     if (!isGameOver) setTimeout(generateObstacle, 3000);
   }
   generateObstacle();
-  console.log('test')
-  function gameOver() {
-    clearInterval(gameTimerId);
-    console.log('game over');
-    isGameOver = true;
-    document.removeEventListener('keyup', control);
-    // ground.classList.add('ground')
-    // ground.classList.remove('ground-moving')
-  }
 });
