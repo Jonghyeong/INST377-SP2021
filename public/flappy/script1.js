@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function control(e) {
     if (e.keyCode === 32) {
-        jump();
+      jump();
     }
   }
 
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isGameOver) setTimeout(generateObstacle, 3000);
   }
   generateObstacle();
-  console.log('test')
+
   function gameOver() {
     clearInterval(gameTimerId);
     console.log('game over');
