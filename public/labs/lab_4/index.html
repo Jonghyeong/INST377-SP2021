@@ -8,12 +8,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <form action="/api" method="POST">
-        <label for="fname">First Name</label>
-        <input type="text" name="fname" id="fname">
-    </form>
-
-    <script src = "script.js"></script>
+    <div class="header">
+        <h1>Jong Kim's LAB 4</h1>
+    </div>
+    <div class="box">   
+        <form action="/api" method="POST">
+            <ul class="flex">
+                <li>
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="firstname">
+                </li>
+                <li>
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="fname" id="lastname">
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                </li>
+                <li>
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone">
+                </li>
+                <li>
+                    <label for="textmessage">Text field</label>
+                    <textarea name="textmessage" id="message" rows="6" placeholder="This is some default message text."></textarea>
+                </li>
+                <li>
+                    <p>Age</p>
+                    <ul class=flex-inner>
+                        <li>
+                            <input type="checkbox" id="young">
+                            <label for="young">18-35</label>    
+                        </li>
+                        <li>
+                            <input type="checkbox" id="mid">
+                            <label for="mid">35-50</label>
+                        </li>
+                        <input type="checkbox" id="old">
+                        <label for="old">50-65</label>
+                    </ul>
+                </li>
+                <li>
+                    <button type="submit">SUBMIT FORM</button>
+                </li>
+            </ul>
+        </form>
+    </div>
 </body>
+<script src = "script.js"></script>
 </html>

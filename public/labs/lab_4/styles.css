@@ -1,3 +1,51 @@
-body {
-    background: #EEE;
+.body {
+    width: 100%;
+    margin: 0 auto;
+    background-color: turquoise;
+    padding: 100px 0;
 }
+
+h1 {
+    text-align: center;
+}
+
+.box {
+    position: absolute;
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex li,
+.flex-inner {
+    padding: 1% 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex > li > label,
+.flex li p {
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.flex > li > label + *,
+.flex-inner {
+    flex: 1 0 220px;
+}
+
+.flex li button {
+    margin-left: 0;
+    padding: 8px 16px;
+    border: none;
+    background: rgb(216, 216, 216);
+    color: #151515;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px; 
+}
+
+.flex-inner li {
+    width: 260px;
+  }
