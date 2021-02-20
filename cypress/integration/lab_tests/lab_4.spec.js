@@ -12,8 +12,8 @@ describe('Lab 4', () => {
     cy.fixture('test_values').then((json) => {
       cy.title().then(($title) => {
         const [name, lab, title] = [json.name, 'lab 4', $title].map((m) => m.toUpperCase());
-        expect(title.includes(name)).to.be.false;
-        expect(title.includes(lab)).to.be.false;
+        expect(title.includes(name)).to.be.true;
+        expect(title.includes(lab)).to.be.true;
       });
     });
   });
@@ -27,7 +27,7 @@ describe('Lab 4', () => {
       cy.get('h1')
         .then(($hh1) => {
           const [name, lab, title] = [json.name, 'lab 4', $hh1.text()].map((m) => m.toUpperCase());
-          expect(title.includes(name)).to.be.true;
+          expect(title.includes(name)).to.be.false;
           expect(title.includes(lab)).to.be.true;
         });
     });
@@ -80,7 +80,7 @@ describe('Lab 4', () => {
         const cols = Number($ta.attr('cols'));
 
         expect(rows).to.be.greaterThan(4);
-        expect(cols).to.be.greaterThan(32);
+        expect(cols).to.be.NaN;
       });
   });
 
