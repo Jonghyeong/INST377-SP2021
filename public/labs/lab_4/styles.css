@@ -16,7 +16,7 @@ h1 {
     margin: 0 auto;
 }
 
-.flex li,
+.flex-outer li,
 .flex-inner {
     padding: 1% 0;
     display: flex;
@@ -24,18 +24,18 @@ h1 {
     align-items: center;
 }
 
-.flex > li > label,
-.flex li p {
+.flex-outer > li > label,
+.flex-outer li p {
     flex: 1 0 120px;
     max-width: 220px;
 }
 
-.flex > li > label + *,
+.flex-outer > li > label + *,
 .flex-inner {
     flex: 1 0 220px;
 }
 
-.flex li button {
+.flex-outer li button {
     margin-left: 0;
     padding: 8px 16px;
     border: none;
@@ -47,5 +47,5 @@ h1 {
 }
 
 .flex-inner li {
-    width: 260px;
+    width: 430px;
   }
