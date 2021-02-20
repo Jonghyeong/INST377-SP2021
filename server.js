@@ -44,7 +44,7 @@ app.route('/api')
     console.log('Form data in res.body', req.body);
     // res.json({message: 'hellow world'});
     res.send('hellow world').status(200);
-    // res.json({data: dataToSendToFrontEnd});
+    res.json({data: dataToSendToFrontEnd});
   });
 
 app.listen(port, async () => {
