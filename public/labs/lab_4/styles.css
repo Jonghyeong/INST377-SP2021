@@ -1,7 +1,7 @@
-.body {
+body {
     width: 100%;
     margin: 0 auto;
-    background-color: turquoise;
+    background-color: rgb(58, 192, 123);
     padding: 100px 0;
 }
 
@@ -9,7 +9,7 @@ h1 {
     text-align: center;
 }
 
-.box {
+.container {
     position: absolute;
     width: 70%;
     max-width: 1200px;
@@ -49,3 +49,7 @@ h1 {
 .flex-inner li {
     width: 430px;
   }
+
+/* .flex-inner {
+justify-content: space-between;
+} */
