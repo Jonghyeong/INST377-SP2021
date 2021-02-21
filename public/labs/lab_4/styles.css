@@ -47,9 +47,9 @@ h1 {
 }
 
 .flex-inner li {
-    width: 430px;
+    width: 100px;
   }
 
-/* .flex-inner {
-justify-content: space-between;
-} */
+.flex-inner {
+    justify-content: space-between;
+}
