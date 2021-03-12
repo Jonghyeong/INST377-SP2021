@@ -28,13 +28,19 @@ async function dataHandler(mapObjectFromFunction) {
     event.preventDefault();
     console.log('submitted')
     const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
-    console.table(filtered);
-    filtered.forEach((item) => {
+    console.log('filtered')
+    const getSix = filtered.slice(0, 7);
+    
+    console.table(getSix);
+
+
+    getSix.forEach((item) => {
       const longLat = item.geocoded_column_1.coordinates;
       console.log('markerLongLat', longLat[0], longLat[1]);
       const marker = L.marker([longLat[1], longLat[0]]).addTo(mapObjectFromFunction);
+      mapObjectFromFunction.panTo([longLat[1], longLat[0]]);
       
-      
+
       const appendItem = document.createElement('li');
       appendItem.classList.add('block');
       appendItem.classList.add('list-item');
@@ -42,9 +48,10 @@ async function dataHandler(mapObjectFromFunction) {
       <address class="is-size-5">${item.address_line_1}</address>`;
 
       suggestions.append(appendItem);
+
     });
   });
-}  
+}
 
 async function windowActions() {
   const map = mapInit();
