@@ -29,12 +29,12 @@ async function dataHandler(mapObjectFromFunction) {
     console.log('submitted')
     const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
     console.log('filtered')
-    const getSix = filtered.slice(0, 7);
+    const getSeven = filtered.slice(0, 7);
     
-    console.table(getSix);
+    console.table(getSeven);
 
 
-    getSix.forEach((item) => {
+    getSeven.forEach((item) => {
       const longLat = item.geocoded_column_1.coordinates;
       console.log('markerLongLat', longLat[0], longLat[1]);
       const marker = L.marker([longLat[1], longLat[0]]).addTo(mapObjectFromFunction);
@@ -46,7 +46,6 @@ async function dataHandler(mapObjectFromFunction) {
       appendItem.classList.add('list-item');
       appendItem.innerHTML = `<div class="list-header is-size-4">${item.name}</div>
       <address class="is-size-5">${item.address_line_1}</address>`;
-
       suggestions.append(appendItem);
 
     });

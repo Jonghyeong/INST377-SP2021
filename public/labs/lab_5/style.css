@@ -15,6 +15,11 @@ h3 {
 
 #mapid { height: 480px; }
 
+.subhead {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
 .list-header {
     font-weight: 600;
     font-size: 1.25rem;
