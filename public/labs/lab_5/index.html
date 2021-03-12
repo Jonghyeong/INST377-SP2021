@@ -10,33 +10,26 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
-    <link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" type= "text/css" href="style.css">
-    
 </head>
-
 <body>
-    <div id="mapid"></div>
-    <div class="h1">
-        <h1 id="header">Jonghyeong Kim's Lab 5</h1>
-        <h2>Zip Code Food Search</h2>
-        <h1 id="grad">  
-        <form class="userform">
-            
-            <label for="search">Search</label>
-       
-            <input type="text" name="search" id="search" placeholder="Search by Zip Code">
-
-            <button type="submit" id="button" name="button">Submit</button>
-        </form>
-        
-        <div class="flex-outer">   
-        <div class="suggestions"></div>
+    <div class="columns">
+        <div class="column">
+            <h1 class="header">Jonghyeong Kim's Lab 5</h1>
+            <div class="subhead">Zip Code Food Search</div>
+            <div class="block">
+                <form action="" id="search-form">
+                    <label for="search"></label>
+                    <input type="text" id="search" name="search" placeholder="Search by Zip Code">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <ul class="target-list">
+            </ul>
         </div>
-        </h1>
-
-
+        <div class="column"><div id="mapid"></div></div>    
+    </div>
+    <script src="script.js"></script>
 </body>
-
-<script src="script.js"></script>
 </html>

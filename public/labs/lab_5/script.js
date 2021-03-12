@@ -17,47 +17,34 @@ function mapInit() {
 async function dataHandler(mapObjectFromFunction) {
   // use your assignment 1 data handling code here
   // and target mapObjectFromFunction to attach markers
-  const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-  const request = await fetch(endpoint);
+  const form = document.querySelector('#search-form');
+  const search = document.querySelector('#search');
+  const suggestions = document.querySelector('.target-list');
+
+  const request = await fetch('/api');
   const data = await request.json();
 
   form.addEventListener('submit', async (event) => {
-    targetList.innerText = '';
-
     event.preventDefault();
-    console.log('submit fired', search.value);
+    console.log('submitted')
+    const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
+    console.table(filtered);
+    filtered.forEach((item) => {
+      const longLat = item.geocoded_column_1.coordinates;
+      console.log('markerLongLat', longLat[0], longLat[1]);
+      const marker = L.marker([longLat[1], longLat[0]]).addTo(mapObjectFromFunction);
+      
+      
+      const appendItem = document.createElement('li');
+      appendItem.classList.add('block');
+      appendItem.classList.add('list-item');
+      appendItem.innerHTML = `<div class="list-header is-size-4">${item.name}</div>
+      <address class="is-size-5">${item.address_line_1}</address>`;
 
-    function findMatches(wordToMatch, data) {
-      console.log('find matches');
-      return data.filter((place) => {
-        const regex = new RegExp(wordToMatch, 'gi');
-        return place.zip.match(regex) || place.name.match(regex);
-      });
-    }
-
-    function displayMatches(event) {
-      console.log('display');
-      const matchArray = findMatches(event.target.value, data);
-      const html = matchArray.map((place) => {
-        const regex = new RegExp(event.target.value, 'gi');
-        const restName = place.name;
-        const address1 = place.address_line_1;
-
-        return `
-              <div class="box1 is-size-6">${restName}</div>
-              <div>${address1}</div>
-              `;
-      }).join('');
-      suggestions.innerHTML = html;
-    }
+      suggestions.append(appendItem);
+    });
   });
-
-  const searchInput = document.querySelector('.userform');
-  const suggestions = document.querySelector('.suggestions');
-  searchInput.addEventListener('change', displayMatches);
-
-}
-
+}  
 
 async function windowActions() {
   const map = mapInit();
