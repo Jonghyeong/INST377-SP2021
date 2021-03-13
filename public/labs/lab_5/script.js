@@ -26,20 +26,27 @@ async function dataHandler(mapObjectFromFunction) {
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    console.log('submitted')
-    const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
-    console.log('filtered')
-    const getSeven = filtered.slice(0, 7);
-    
-    console.table(getSeven);
+    console.log('submitted');
 
+    // check if search box is empty
+    const box = search.value
+    if (box === "") {
+      console.log('empty input')
+      // alert("Box is empty")
+      return false
+    };
+
+    const filtered = data.filter((record) => record.zip.includes(box) && record.geocoded_column_1);
+    console.log('filtered');
+    const getSeven = filtered.slice(0, 7);
+
+    console.table(getSeven);
 
     getSeven.forEach((item) => {
       const longLat = item.geocoded_column_1.coordinates;
       console.log('markerLongLat', longLat[0], longLat[1]);
       const marker = L.marker([longLat[1], longLat[0]]).addTo(mapObjectFromFunction);
       mapObjectFromFunction.panTo([longLat[1], longLat[0]]);
-      
 
       const appendItem = document.createElement('li');
       appendItem.classList.add('block');
@@ -47,7 +54,6 @@ async function dataHandler(mapObjectFromFunction) {
       appendItem.innerHTML = `<div class="list-header is-size-4">${item.name}</div>
       <address class="is-size-5">${item.address_line_1}</address>`;
       suggestions.append(appendItem);
-
     });
   });
 }
