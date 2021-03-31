@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         isJumping = true;
                     };
             });
-        }, 30);
+        }, 20);
     }
 
     function gameOver() {
