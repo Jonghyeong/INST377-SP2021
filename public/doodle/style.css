@@ -3,12 +3,14 @@
     height: 600px;
     background-color: yellow;
     position: relative;
+    font-size: 200px;
+    text-align: center;
 }
 
 .doodler {
     width: 60px;
     height: 85px;
-    background-color: red;
+    background-color: rgb(149, 0, 255);
     position: absolute;
     
 }
@@ -16,6 +18,6 @@
 .platform {
     width: 85px;
     height: 15px;
-    background-image: url('platform.pnp');
+    background-image: url('platform.png');
     position: absolute;
 }
