@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     const doodler = document.createElement('div');
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0;
 
 
-    
     function createDoodler() {
         grid.appendChild(doodler);
         doodler.classList.add('doodler');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         doodler.style.left = doodlerLeftSpace + 'px';
         doodler.style.bottom = doodlerBottomSpace + 'px';
     }
-  
+
     class Platform {
         constructor(newPlatBottom) {
             this.left = Math.random() * 315;
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newPlatform = new Platform(newPlatBottom);
             platforms.push(newPlatform);
             console.log(platforms);
-        }  
+        };
     }
 
     function movePlatforms() {
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fall();
                 isJumping = false;
             };
-        },30);
+        }, 30);
     }
 
     function fall() {
